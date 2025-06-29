@@ -22,7 +22,7 @@ import {
   User,
   Baby,
   FolderOpen,
-  Medal,
+
   Heart,
   Sparkles,
   Rocket,
@@ -30,7 +30,8 @@ import {
   Scale,
   Eye,
   XCircle,
-  ExternalLink
+  ExternalLink,
+  CheckIcon
 } from 'lucide-react';
 
 // Официальные SVG иконки мессенджеров с alt атрибутами
@@ -127,9 +128,9 @@ function App() {
           <div className="text-center relative z-10">
             <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 bg-gradient-to-r from-blue-50 via-white to-indigo-50 border-2 border-blue-200 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm">
               <div className="flex items-center gap-2">
-                <Medal className="w-5 h-5 text-blue-600" aria-label="Медаль за профессионализм" />
+                <img src="/spravka-bk-logo.svg" alt="Справка БК" className="w-8 sm:w-6 h-auto aspect-square scale-150 flex-none" />
               </div>
-              <span className="text-sm font-semibold text-blue-800 tracking-wide">
+              <span className="text-sm sm:text-md font-semibold text-blue-800 tracking-wide">
                 10&nbsp;лет опыта в&nbsp;антикоррупционном подразделении
               </span>
             </div>
@@ -299,7 +300,7 @@ function App() {
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full"></div>
               <p className="text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed">
-                Укажите всех членов семьи согласно требованиям антикоррупционного законодательства.
+                Справка БК должна содержать всех членов семьи согласно требованиям антикоррупционного законодательства.
               </p>
             </div>
 
@@ -441,20 +442,20 @@ function App() {
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
               <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
-                Пошаговый алгоритм работы с&nbsp;соблюдением всех требований антикоррупционного законодательства и&nbsp;методических рекомендаций Минтруда России
+                Пошаговый алгоритм работы
               </p>
             </div>
 
             <div className="max-w-4xl mx-auto">
-              <div className="space-y-8">
+              <div className="space-y-4">
                 {[
                   {
                     step: 1,
-                    title: "Свяжитесь со&nbsp;мной",
+                    title: "Начало работы",
                     description: "Свяжитесь удобным способом через Telegram, WhatsApp или&nbsp;Авито",
                     icon: MessageCircle,
                     color: "from-blue-500 to-blue-600",
-                    iconLabel: "Сообщение - связь с клиентом"
+                    iconLabel: "Связаться для заполнения Справки БК"
                   },
                   {
                     step: 2,
@@ -462,29 +463,29 @@ function App() {
                     description: "Обсуждаем вашу ситуацию, предоставляю персональный список необходимых документов и&nbsp;информации.",
                     icon: FileText,
                     color: "from-green-500 to-green-600",
-                    iconLabel: "Документ - обсуждение деталей"
+                    iconLabel: "Обсуждение Справки БК"
                   },
                   {
                     step: 3,
-                    title: "Предоставление данных",
-                    description: "Вы&nbsp;предоставляете данные в&nbsp;удобном формате, я&nbsp;приступаю к&nbsp;профессиональному заполнению справки.",
+                    title: "Сбор данных",
+                    description: "Вы&nbsp;предоставляете данные в&nbsp;удобном формате, я&nbsp;приступаю к&nbsp;заполнению справки БК.",
                     icon: FolderOpen,
                     color: "from-purple-500 to-purple-600",
-                    iconLabel: "Папка - предоставление данных"
+                    iconLabel: "Список данных для Справки БК"
                   },
                   {
                     step: 4,
                     title: "Получение результата",
-                    description: "Получаете готовую справку в&nbsp;двух форматах, при&nbsp;необходимости вносим корректировки бесплатно.",
+                    description: "Вы получаете готовую справку в&nbsp;двух форматах, при&nbsp;необходимости вносим корректировки бесплатно.",
                     icon: Download,
                     color: "from-orange-500 to-orange-600",
-                    iconLabel: "Загрузка - получение результата"
+                    iconLabel: "Получить готовую Справку БК"
                   },
                   {
                     step: 5,
-                    title: "Поддержка",
+                    title: "Сдача Справки&nbsp;БК",
                     description: "Оказываю полную поддержку и&nbsp;консультации до&nbsp;момента успешного принятия справки органами.",
-                    icon: HeadphonesIcon,
+                    icon: CheckIcon,
                     color: "from-indigo-500 to-indigo-600",
                     iconLabel: "Наушники - постоянная поддержка"
                   }
@@ -547,7 +548,7 @@ function App() {
                 {/* Content */}
                 <div className="relative z-10">
                   <h2 className="text-2xl md:text-3xl font-bold mb-2 drop-shadow-lg">
-                    Начнём работу над&nbsp;вашей Справкой&nbsp;БК
+                    Начать заполнение вашей Справки&nbsp;БК
                   </h2>
                 </div>
               </div>
@@ -556,7 +557,7 @@ function App() {
                 {/* Simple centered text */}
                 <div className="text-center mb-8">
                   <p className="text-lg text-gray-700">
-                    Свяжитесь со&nbsp;мной для&nbsp;профессиональной помощи
+                    Свяжитесь со&nbsp;мной для&nbsp;начала работы
                   </p>
                 </div>
 
