@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://справкабк.рф/sitemap.xml
+
+# Crawl optimization
+Crawl-delay: 1
