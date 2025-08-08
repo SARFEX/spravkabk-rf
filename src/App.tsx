@@ -22,16 +22,11 @@ import {
   User,
   Baby,
   FolderOpen,
-
-  Heart,
-  Sparkles,
-  Rocket,
-  ThumbsUp,
   Scale,
   Eye,
   XCircle,
-  ExternalLink,
-  CheckIcon
+  CheckIcon,
+  ExternalLink
 } from 'lucide-react';
 
 // Официальные SVG иконки мессенджеров с alt атрибутами
@@ -804,36 +799,38 @@ function App() {
               </div>
             </div>
           </section>
+
+          {/* Полезные ссылки — перемещено выше футера, без иконок, строгий стиль */}
+          <section aria-labelledby="helpful-links" className="px-4 sm:px-8 py-10 bg-white">
+            <div className="max-w-4xl mx-auto">
+              <h2 id="helpful-links" className="text-xl font-semibold text-gray-900 mb-4">Полезные ссылки</h2>
+              <div className="useful-links p-5 rounded-xl border border-gray-200 bg-white">
+                <ul className="space-y-2">
+                  <li className="p-0">
+                    <p className="text-gray-700">
+                      Рекомендую сервис для просмотра{' '}
+                      <a
+                        href="https://справка-онлайн.рф"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-700 hover:text-blue-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/50 rounded-sm"
+                      >
+                        Справки БК онлайн
+                      </a>
+                      , работает прямо из браузера
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
         </main>
 
-        {/* Footer - Enhanced with cute visual element */}
-        <footer className="border-t border-gray-200 px-4 sm:px-8 py-8 bg-gradient-to-r from-gray-50 to-blue-50 relative overflow-hidden">
-          {/* Cute decorative elements */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-5">
-            <div className="absolute top-4 left-8">
-              <Heart className="w-6 h-6 text-pink-400 animate-pulse" aria-label="Сердце - благодарность клиентам" />
-            </div>
-            <div className="absolute top-6 right-12">
-              <Sparkles className="w-5 h-5 text-blue-400 animate-bounce" aria-label="Блестки - качество услуг" />
-            </div>
-            <div className="absolute bottom-4 left-1/4">
-              <Star className="w-4 h-4 text-yellow-400 animate-pulse" aria-label="Звезда - высокий рейтинг" />
-            </div>
-            <div className="absolute bottom-6 right-1/3">
-              <Rocket className="w-5 h-5 text-purple-400 animate-bounce" aria-label="Ракета - быстрое выполнение" />
-            </div>
-          </div>
-
-          <div className="text-center relative z-10">
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <ThumbsUp className="w-5 h-5 text-green-500" aria-label="Лайк - одобрение услуг" />
-              <p className="text-gray-700 font-medium">
-                Профессиональные услуги по&nbsp;заполнению справки&nbsp;БК
-              </p>
-            </div>
-            <p className="text-sm text-gray-500">
-              © 2025 Услуги по&nbsp;заполнению справки&nbsp;БК. Все права защищены.
-            </p>
+        {/* Строгий минималистичный футер без иконок */}
+        <footer className="border-t border-gray-200 px-4 sm:px-8 py-6 bg-white">
+          <div className="text-center">
+            <p className="text-sm text-gray-500">&copy; 2025 Услуги по&nbsp;заполнению справки&nbsp;БК. Все права защищены.</p>
           </div>
         </footer>
       </div>
