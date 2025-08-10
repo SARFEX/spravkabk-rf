@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
@@ -10,12 +10,19 @@ if (!rootElement) {
   throw new Error('Root element not found');
 }
 
-// Создаем root с оптимизациями
-const root = createRoot(rootElement);
-
-// Рендерим приложение сразу без задержек
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+// Если на странице уже есть SSR-разметка — гидрируем, иначе делаем обычный рендер
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(
+    rootElement,
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+} else {
+  const root = createRoot(rootElement);
+  root.render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+}

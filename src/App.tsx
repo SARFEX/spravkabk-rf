@@ -89,11 +89,12 @@ const AvitoLogo = ({ className }: { className?: string }) => (
 function App() {
   // Функция для скролла к блоку контактов
   const scrollToContact = () => {
+    if (typeof document === 'undefined') return;
     const contactSection = document.getElementById('contact-section');
     if (contactSection) {
       contactSection.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       });
     }
   };
@@ -331,18 +332,17 @@ function App() {
                   </div>
                 </div>
 
-                {/* Enhanced CTA Button */}
+                {/* Enhanced CTA Link (static) */}
                 <div className="text-center">
-                  <Button
-                    size="lg"
-                    onClick={scrollToContact}
-                    className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-6 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group text-base sm:text-lg hover:-translate-y-1"
+                  <a
+                    href="#contact-section"
+                    className="inline-flex items-center justify-center w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-6 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group text-base sm:text-lg hover:-translate-y-1"
                     aria-label="Перейти к контактам для заказа справки БК"
                   >
                     <span className="hidden sm:inline">Заказать заполнение справки&nbsp;БК</span>
                     <span className="sm:hidden">Заказать справку&nbsp;БК</span>
                     <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
-                  </Button>
+                  </a>
                 </div>
               </div>
             </div>

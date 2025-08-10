@@ -5,8 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview",
+    "build": "tsc -b && npm run build:client && npm run build:ssr && npm run prerender",
+    "build:client": "vite build",
+    "build:ssr": "vite build --ssr src/ssr-entry.tsx --outDir .ssr --emptyOutDir true",
+    "prerender": "node scripts/prerender.mjs",
+    "preview": "npx http-server dist -p 4173",
     "lint": "eslint .",
     "deploy": "npm run build && dotenv -- aws s3 sync dist/ s3://xn--80aadc4bc3aih.xn--p1ai --endpoint-url https://storage.yandexcloud.net --region ru-central1"
   },
